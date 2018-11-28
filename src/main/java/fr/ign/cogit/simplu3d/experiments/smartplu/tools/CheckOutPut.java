@@ -17,13 +17,13 @@ public class CheckOutPut {
 	public static void main(String[] args) throws Exception {
 
 		// Folder with the output of the results
-		String folderResults = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/smartPLU/results/61230_first/";
+		String folderResults = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/pchoisy_openmole_tarball/results_pchoisy/";
 
 		// Folder with the data used for the simulation
-		String folderDataIn = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/smartPLU/dataBasicSimu/61230_temp/";
+		String folderDataIn = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/pchoisy_openmole_tarball/dataBasicSimu/pchoisy/";
 
 		// Folder with the data that were not simulated
-		String folderOut = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/smartPLU/dataBasicSimu/61230/";
+		String folderOut = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/smartPLU/dataBasicSimu/61230/pchoisy_missing/";
 		
 		(new File(folderOut)).mkdirs();
 
