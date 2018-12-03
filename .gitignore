@@ -26,3 +26,7 @@
 hs_err_pid*
 /target/
 /target/*
+
+# NodeJS experiments
+/node_modules/
+/package-lock.json
