@@ -2,10 +2,10 @@
   "name": "simplu3d-experiments",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/SimPLU3D/simplu3D-experiments.svg?branch=master)](https://travis-ci.org/SimPLU3D/simplu3D-experiments)",
-  "main": "src/main/js/index.js",
+  "main": "./src/main/js/index.js",
   "scripts": {
     "postinstall" : "npm run maven-install",
-    "maven-install": "mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true",
+    "maven-install": "mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
   },
   "repository": {
     "type": "git",
