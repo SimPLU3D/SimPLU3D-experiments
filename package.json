@@ -1,0 +1,25 @@
+{
+  "name": "simplu3d-experiments",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/SimPLU3D/simplu3D-experiments.svg?branch=master)](https://travis-ci.org/SimPLU3D/simplu3D-experiments)",
+  "main": "src/main/js/index.js",
+  "scripts": {
+    "postinstall" : "npm run maven-install",
+    "maven-install": "mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcaillau/simplu3D-experiments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hcaillau/simplu3D-experiments/issues"
+  },
+  "homepage": "https://github.com/hcaillau/simplu3D-experiments#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.3"
+  }
+}
