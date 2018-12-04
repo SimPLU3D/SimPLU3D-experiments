@@ -16,6 +16,3 @@ simplu3d.run(
     ]
 );
 ```
-simplu3d.run(param) doit être appelé dans une fonction async main dans demonumen on pourra le mettre dans le dossier src.
-
-
