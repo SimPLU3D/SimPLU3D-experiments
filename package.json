@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hcaillau/simplu3D-experiments.git"
+    "url": "git+https://github.com/hcaillau/simplu3D-experiments#master"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hcaillau/simplu3D-experiments/issues"
+    "url": "git+https://github.com/hcaillau/simplu3D-experiments/issues"
   },
-  "homepage": "https://github.com/hcaillau/simplu3D-experiments#readme",
+  "homepage": "git+https://github.com/hcaillau/simplu3D-experiments#readme",
   "dependencies": {
     "fs": "0.0.1-security",
     "path": "^0.12.7",
