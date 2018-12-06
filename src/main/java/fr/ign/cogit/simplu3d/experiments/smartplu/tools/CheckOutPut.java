@@ -23,7 +23,7 @@ public class CheckOutPut {
 		String folderDataIn = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/pchoisy_openmole_tarball/dataBasicSimu/pchoisy/";
 
 		// Folder with the data that were not simulated
-		String folderOut = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/smartPLU/dataBasicSimu/61230/pchoisy_missing/";
+		String folderOut = "/home/mbrasebin/.openmole/ZBOOK-SIGOPT-2016/webui/projects/pchoisy_openmole_tarball/pchoisy_missing/";
 		
 		(new File(folderOut)).mkdirs();
 
