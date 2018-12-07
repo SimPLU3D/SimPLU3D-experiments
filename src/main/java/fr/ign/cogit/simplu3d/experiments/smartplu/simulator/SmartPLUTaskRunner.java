@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import fr.ign.cogit.simplu3d.io.feature.AttribNames;
-import fr.ign.cogit.simplu3d.misc.Initialize;
+import fr.ign.cogit.simplu3d.util.distribution.Initialize;
 import fr.ign.cogit.simplu3d.util.distribution.ZonePackager;
 import fr.ign.simplu3d.iauidf.openmole.EPFIFTask;
 import fr.ign.simplu3d.iauidf.tool.ParcelAttributeTransfert;
