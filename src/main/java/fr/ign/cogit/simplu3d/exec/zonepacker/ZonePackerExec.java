@@ -8,8 +8,8 @@ import fr.ign.cogit.simplu3d.util.distribution.ZonePackager;
 public class ZonePackerExec {
 
 	public static void main(String[] args) throws Exception {
-		String parcelFileIn = "/home/mbrasebin/Bureau/parcels_rulez/new/parcels_rulez.shp";
-		String folderTemp = "/tmp/";
+		String parcelFileIn = "/home/mbrasebin/Bureau/parcels_rulez/real/parcels_rulez.shp";
+		String folderTemp = "/tmp/tmp/";
 		String folderOut = "/tmp/out/";
 
 		IFeatureCollection<IFeature> parcelles = ShapefileReader.read(parcelFileIn);
@@ -17,7 +17,7 @@ public class ZonePackerExec {
 		int numberOfParcels = 20;
 		double areaMax = 5000;
 
-		ZonePackager.createParcelGroupsAndExport(parcelles, numberOfParcels, areaMax, folderTemp, folderOut, true);
+		ZonePackager.createParcelGroupsAndExport(parcelles, numberOfParcels, areaMax, folderTemp, folderOut, false);
 
 	}
 
