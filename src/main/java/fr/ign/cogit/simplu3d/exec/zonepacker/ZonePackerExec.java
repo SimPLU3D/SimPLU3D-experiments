@@ -12,6 +12,7 @@ public class ZonePackerExec {
 		String folderTemp = "/tmp/tmp/";
 		String folderOut = "/tmp/out/";
 
+		ZonePackager.ATTRIBUTE_SIMUL_TYPE = "String";
 		IFeatureCollection<IFeature> parcelles = ShapefileReader.read(parcelFileIn);
 
 		int numberOfParcels = 20;

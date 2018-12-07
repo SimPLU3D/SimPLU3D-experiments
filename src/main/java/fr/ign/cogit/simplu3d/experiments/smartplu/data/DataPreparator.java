@@ -28,7 +28,7 @@ public class DataPreparator {
 	public static void main(String[] args) throws Exception {
 		//Attribute that indicates if we simul or not the parcel
 		ZonePackager.ATTRIBUTE_SIMUL = "has_rules";
-		
+		ZonePackager.ATTRIBUTE_SIMUL_TYPE = "Boolean";
 		//Mapping attributes to generate IDPAR (concatenation of these four attributes)
 		//In this case departement attribut is facultative as the commune attribute 
 		//already contains  the departement number
