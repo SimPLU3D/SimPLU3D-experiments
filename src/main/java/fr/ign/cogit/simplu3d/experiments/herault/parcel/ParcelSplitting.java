@@ -5,6 +5,8 @@ import java.io.File;
 import fr.ign.cogit.geoxygene.api.feature.IFeature;
 import fr.ign.cogit.geoxygene.api.feature.IFeatureCollection;
 import fr.ign.cogit.geoxygene.api.spatial.coordgeom.IPolygon;
+import fr.ign.cogit.geoxygene.api.spatial.geomaggr.IMultiCurve;
+import fr.ign.cogit.geoxygene.api.spatial.geomprim.IOrientableCurve;
 import fr.ign.cogit.geoxygene.convert.FromGeomToSurface;
 import fr.ign.cogit.geoxygene.feature.FT_FeatureCollection;
 import fr.ign.cogit.geoxygene.sig3d.calculation.parcelDecomposition.OBBBlockDecomposition;
@@ -15,7 +17,7 @@ public class ParcelSplitting {
 
 	public static void main(String[] args) throws Exception {
 		parcelSplit(new File("/home/mcolomb/tmp/test/parcelle2.shp"), new File("/home/mcolomb/tmp/test/parcDiv4.shp"),
-				10000, 50, 0.5, 5);
+				10000, 50, 0.5, 5,null, 0 , 0 , false);
 	}
 
 	/**
@@ -30,7 +32,8 @@ public class ParcelSplitting {
 	 * @throws Exception
 	 */
 	public static File parcelSplit(File fileIn, File fileOut, double maximalArea, double maximalWidth,
-			double roadEpsilon, double noise) throws Exception {
+			double roadEpsilon, double noise, IMultiCurve<IOrientableCurve> imC, int decompositionLevelWithRoad,
+			double roadWidth, boolean forceRoadAccess) throws Exception {
 
 		String attNameToTransform = "SPLIT";
 
@@ -50,7 +53,8 @@ public class ParcelSplitting {
 			}
 			IPolygon pol = (IPolygon) FromGeomToSurface.convertGeom(feat.getGeom()).get(0);
 
-			OBBBlockDecomposition obb = new OBBBlockDecomposition(pol, maximalArea, maximalWidth, roadEpsilon);
+			OBBBlockDecomposition obb =  new OBBBlockDecomposition(pol, maximalArea, maximalWidth,
+					noise, null, decompositionLevelWithRoad, 5.0, forceRoadAccess);
 
 			IFeatureCollection<IFeature> featCollTemp = obb.decompParcel(noise);
 
