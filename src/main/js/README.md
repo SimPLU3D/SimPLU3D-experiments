@@ -1,9 +1,14 @@
-# Intégration NodeJS
+# NodeJS
 
-## Utilisation
+## Description
+
+[Simplu3D-experiments](https://github.com/simplu3d/simplu3D-experiments#simplu3d-experiments) is provided as an npm module to simplify demonstrator building.
+
+## Usage
 
 ```bash
-npm install --save git+https://github.com/hcaillau/simplu3D-experiments.git#master
+# note that maven is required
+npm install --save git+https://github.com/simplu3d/simplu3D-experiments.git#master
 ```
 
 ```js
@@ -16,3 +21,4 @@ simplu3d.run(
     ]
 );
 ```
+

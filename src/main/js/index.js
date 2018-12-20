@@ -5,6 +5,11 @@ const shell = require('shelljs');
 const jarName = '/simplu3d-experiments-1.2-SNAPSHOT-shaded.jar';
 const targetDir = path.resolve(__dirname, '../../../target/'+jarName);
 
+/**
+ * Run main in a given className with params
+ * @param {string} className 
+ * @param {string[]} params 
+ */
 function run(className, params){
     var cli = 'java -cp '
         + targetDir
