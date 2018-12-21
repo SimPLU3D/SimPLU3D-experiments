@@ -1,0 +1,25 @@
+{
+  "name": "simplu3d-experiments",
+  "version": "1.0.0",
+  "description": "NodeJS helper to invoke programs provided in simplu3d-experiments",
+  "main": "./src/main/js/index.js",
+  "scripts": {
+    "postinstall" : "npm run maven-install",
+    "maven-install": "mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplu3d/simplu3D-experiments#master"
+  },
+  "author": "Hector Caillau",
+  "license": "CeCILL",
+  "bugs": {
+    "url": "git+https://github.com/simplu3d/simplu3D-experiments/issues"
+  },
+  "homepage": "git+https://github.com/simplu3d/simplu3D-experiments#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.3"
+  }
+}
