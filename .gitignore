@@ -30,3 +30,4 @@ hs_err_pid*
 # NodeJS experiments
 /node_modules/
 /package-lock.json
+/bin/
