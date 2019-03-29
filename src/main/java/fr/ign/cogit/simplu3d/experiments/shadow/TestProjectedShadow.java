@@ -43,18 +43,21 @@ import fr.ign.cogit.simplu3d.representation.RepEnvironnement.Theme;
 public class TestProjectedShadow {
 
 	public static void main(String[] args) throws Exception {
-
+		//Epsilon to check if a ray intersects a polygon
 		RayCasting.EPSILON = 0.01;
+		//Add a special test to check if the ray intersects the edge of a geometry
 		RayCasting.CHECK_IS_ON_EDGE = true;
-
+		
 		PlanEquation.EPSILON = 0.0000000000001;
-
+		
+		//Sky color
 		ConstantRepresentation.backGroundColor = new Color(156, 180, 193);
-
+		
+		//SimPLU3D project
 		String folder = "E:/mbrasebin/Donnees/Strasbourg/GTRU/Project1/";
 
 		Environnement env = LoaderSHP.load(new File(folder));
-
+		//Rendered themes
 		List<Theme> lTheme = new ArrayList<RepEnvironnement.Theme>();
 		lTheme.add(Theme.TOIT_BATIMENT);
 		lTheme.add(Theme.FACADE_BATIMENT);
@@ -68,7 +71,7 @@ public class TestProjectedShadow {
 		// lTheme.add(Theme.PAN);
 
 		Theme[] tab = lTheme.toArray(new Theme[0]);
-
+		//Prepare the rendering
 		List<VectorLayer> vl = RepEnvironnement.represent(env, tab);
 
 		MainWindow mW = new MainWindow();
@@ -77,7 +80,7 @@ public class TestProjectedShadow {
 
 			mW.getInterfaceMap3D().getCurrent3DMap().addLayer(l);
 		}
-
+		//rEMOVE THE LIGHT
 		mW.getInterfaceMap3D().removeLight(0);
 
 		/*
@@ -89,7 +92,7 @@ public class TestProjectedShadow {
 
 		// 1051042.8513268954120576,6840539.0837931865826249 :
 		// 1051264.8064121364150196,6840679.2711814027279615
-
+		//sCENE COORDINATES
 		double xc = (1051042.8513268954120576 + 1051264.8064121364150196) / 2;
 		double yc = (6840539.0837931865826249 + 6840679.2711814027279615) / 2;
 
@@ -110,7 +113,7 @@ public class TestProjectedShadow {
 		dpl.add(dp3);
 		dpl.add(dp4);
 		dpl.add(dp1);
-
+		//Emprise to map an image
 		IPolygon emprise = new GM_Polygon(new GM_LineString(dpl));
 
 		if (emprise.isEmpty()) {
@@ -135,8 +138,16 @@ public class TestProjectedShadow {
 
 		long t = System.currentTimeMillis();
 
+		//Processing the shadow casting with
+		//--SimPLU3D Buildings
+		//--Parcels (not sure if they are useful)
+		//--Scene geometry (on which shadow will be casted)
+		//--Sun direction vector
+		//--Min and max distance of projection
+		//--Type of result (here volumic shadows)
+		//--Do not remember what is true
 		List<IGeometry> lGeom2 = ProjectedShadow.process(env.getBuildings(), env.getSubParcels(),
-				(IPolygon) feat.getGeom(), new Vecteur(0, 1, -0.4), -2, 15,
+				(IPolygon) feat.getGeom(), new Vecteur(0, 1, -0.4), 0, 15,
 				ProjectedShadow.POSSIBLE_RESULT.PROJECTED_VOLUME, true);
 
 		List<IGeometry> lGeom = InverseProjection.process(env.getBuildings(), 4, new Vecteur(0, 1, -0.4), 20);
