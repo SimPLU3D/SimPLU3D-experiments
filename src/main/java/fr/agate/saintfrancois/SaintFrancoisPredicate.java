@@ -77,6 +77,7 @@ implements ConfigurationModificationPredicate<C, M> {
 		
 		for(O o : arg1.getBirth()) {
 			CuboidRoofed cuboidRoofed = (CuboidRoofed)o;
+			
 			double hauteurFaitage = cuboidRoofed.getHeightT() +  cuboidRoofed.getHeight();
 			
 			
@@ -119,7 +120,8 @@ implements ConfigurationModificationPredicate<C, M> {
 			
 			//System.out.println( hauteurFaitage);
 			
-			if(geom.distance(limitToRoad) <= (hauteurFaitage /2) ) {
+			
+			if(geom.distance(limitToRoad) <= (hauteurFaitage * 0.5) ) {
 				return false;
 			}
 			
